@@ -43,11 +43,15 @@ export default function TeamDetails({ team, onBack }: Props) {
         }
     };
 
-    const handleSave = () => {
+    const handleSave = async () => {
         setIsSaving(true);
-        if (editedName !== team.name) {
-            dispatch(updateTeamName({ teamId: team.id, name: editedName }));
-        }
+        const updatedTeam = { ...team, name: editedName, members: editedMembers };
+        await fetch(`/api/teams/${team.id}`, {
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedTeam),
+        });
+        dispatch(updateTeamName({ teamId: team.id, name: editedName }));
         editedMembers.forEach((member, i) => {
             if (!isEqual(member, team.members[i])) {
                 dispatch(updateMember({ teamId: team.id, index: i, member }));
@@ -58,6 +62,7 @@ export default function TeamDetails({ team, onBack }: Props) {
             toast.success("Changes saved successfully.");
         }, 500);
     };
+
 
     return (
         <div>
