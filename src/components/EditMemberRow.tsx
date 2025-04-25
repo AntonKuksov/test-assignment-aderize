@@ -26,6 +26,7 @@ export default function EditMemberRow({ member, onChange, onValid }: Props) {
         onChange({ ...member, [key]: value });
     };
 
+
     return (
         <tr>
             <td className="border px-4 py-2">
