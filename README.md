@@ -3,6 +3,34 @@
 # Dashboard for Team Management
 Build a responsive, single-page application that displays and manages a list of teams and their members using a fake API (provided). The app should allow listing, filtering, and editing of team data.
 
+## ✨ Tech Stack
+
+- **React** + **TypeScript**
+- **Redux Toolkit** for state management
+- **Tailwind CSS** for styling
+- **Mock Service Worker (MSW)** for API mocking during development
+
+## 🚀 Getting Started
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Start development server
+```bash
+npm run dev
+```
+
+### Build for production
+```bash
+npm run build
+```
+
+### Preview production build
+```bash
+npm run preview
+```
 ## 🛠 Mock Service Worker Setup
 
 If you are using MSW (Mock Service Worker) in development, you need to initialize the service worker script:
@@ -29,37 +57,4 @@ npm run dev
 > ⚠️ If this file is missing, MSW will fail to register and show a MIME type error in the browser console.
 
 
-## 🚀 Getting Started
 
-### Install dependencies
-```bash
-npm install
-```
-
-### Start development server
-```bash
-npm run dev
-```
-
-### Build for production
-```bash
-npm run build
-```
-
-### Preview production build
-```bash
-npm run preview
-```
-
-### Run tests (if applicable)
-```bash
-npm test
-```
-
----
-
-This project uses:
-- React + TypeScript
-- Redux Toolkit for state management
-- Tailwind CSS for styling
-- MSW for mocking API responses during development
